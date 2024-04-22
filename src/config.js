@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 
-const connect = mongoose.connect("");
+const connect = mongoose.connect(
+  "mongodb+srv://pandureddypatterns:Pandu@12@cluster0.by9nkhh.mongodb.net/"
+);
 
 //check database connection
 
