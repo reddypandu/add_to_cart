@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 
 const connect = mongoose.connect("mongodb://localhost:27017/pandu");
+// const connect = mongoose.connect(
+//   "mongodb+srv://pandureddypatterns:<Pandu@12>@cluster0.by9nkhh.mongodb.net/pandu"
+// );
 
 //check database connection
 
@@ -16,6 +19,10 @@ connect
 
 const LoginSchema = new mongoose.Schema({
   name: {
+    type: String,
+    required: true,
+  },
+  email: {
     type: String,
     required: true,
   },
