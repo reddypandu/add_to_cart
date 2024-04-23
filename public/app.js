@@ -138,10 +138,10 @@ const changeQuantityCart = (product_id, type) => {
   addCartToHTML();
   addCartToMemory();
 };
-
+``;
 const initApp = () => {
   // get data product
-  fetch("products.json")
+  fetch("/products.json")
     .then((response) => response.json())
     .then((data) => {
       products = data;

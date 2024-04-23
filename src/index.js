@@ -15,11 +15,11 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.render("login");
+  res.render("signup");
 });
 
-app.get("/signup", (req, res) => {
-  res.render("signup");
+app.get("/login", (req, res) => {
+  res.render("login");
 });
 //register user
 
@@ -35,7 +35,7 @@ app.post("/signup", async (req, res) => {
   } else {
     //hashing password
     const saltRounds = 10;
-    const hashpassword = await bcrypt.hash(dats.password, saltRounds);
+    const hashpassword = await bcrypt.hash(data.password, saltRounds);
     data.password = hashpassword;
     const userdata = await collection.insertMany(data);
     console.log(userdata);
